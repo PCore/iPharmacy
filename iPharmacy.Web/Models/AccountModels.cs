@@ -25,12 +25,12 @@ namespace iPharmacy.Web.Models
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
-        public string UserName { get; set; }
+        public string UserName { get; set; } 
     }
 
     public class RegisterExternalLoginModel
     {
-        [Required]
+        [Required] 
         [Display(Name = "User name")]
         public string UserName { get; set; }
 
