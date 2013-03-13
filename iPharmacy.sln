@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iPharmacy.Web", "iPharmacy.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iPharmacy.Web.Tests", "iPharmacy.Web.Tests\iPharmacy.Web.Tests.csproj", "{4EE8E029-7E3C-4FA8-9744-5B164D805E88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iPharmacy.Model", "iPharmacy.Model\iPharmacy.Model.csproj", "{74ABE6DD-2647-4E4C-83F6-2EB641053923}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{4EE8E029-7E3C-4FA8-9744-5B164D805E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EE8E029-7E3C-4FA8-9744-5B164D805E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EE8E029-7E3C-4FA8-9744-5B164D805E88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74ABE6DD-2647-4E4C-83F6-2EB641053923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74ABE6DD-2647-4E4C-83F6-2EB641053923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74ABE6DD-2647-4E4C-83F6-2EB641053923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74ABE6DD-2647-4E4C-83F6-2EB641053923}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
