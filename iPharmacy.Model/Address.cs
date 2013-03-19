@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
-namespace iPharmacy.Web.Models
+
+namespace iPharmacy.Model
 {
  
     public class Address
