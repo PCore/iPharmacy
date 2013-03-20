@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace iPharmacy.Web.Models
+namespace iPharmacy.Model
 {
     public class Order
     {
