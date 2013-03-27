@@ -97,6 +97,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ProductControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>
@@ -107,6 +108,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\iPharmacy.Domain\iPharmacy.Domain.csproj">
+      <Project>{F7ECB52E-2966-4BCC-8E4D-95F4074CD46E}</Project>
+      <Name>iPharmacy.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iPharmacy.Model\iPharmacy.Model.csproj">
+      <Project>{74ABE6DD-2647-4E4C-83F6-2EB641053923}</Project>
+      <Name>iPharmacy.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\iPharmacy.Web\iPharmacy.Web.csproj">
       <Project>{41B483EF-753F-4909-AEED-82FEC1393679}</Project>
       <Name>iPharmacy.Web</Name>
