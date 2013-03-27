@@ -12,31 +12,40 @@ namespace iPharmacy.Web.Controllers
 {
     public class ProductController : Controller
     {
-        private iPharmacyDb db = new iPharmacyDb();
+        private IProductRepository productRepository;
+
+
+        public ProductController()
+        {
+            this.productRepository = new ProductRepository();
+        }
+
+        public ProductController(IProductRepository productRepository)
+        {
+            this.productRepository = productRepository;
+        }
+
 
         //
-        // GET: /Product/
+        // GET: /Student/
 
-        public ActionResult Index()
+        public ViewResult Index()
         {
-            return View(db.Products.ToList());
+            return View(productRepository.GetProducts());
+        }
+
+
+        //
+        // GET: /Student/Details/5
+
+        public ViewResult Details(int id)
+        {
+            Product student = productRepository.GetProductByID(id);
+            return View(student);
         }
 
         //
-        // GET: /Product/Details/5
-
-        public ActionResult Details(int id = 0)
-        {
-            Product product = db.Products.Find(id);
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
-            return View(product);
-        }
-
-        //
-        // GET: /Product/Create
+        // GET: /Student/Create
 
         public ActionResult Create()
         {
@@ -44,78 +53,102 @@ namespace iPharmacy.Web.Controllers
         }
 
         //
-        // POST: /Product/Create
+        // POST: /Student/Create
 
         [HttpPost]
         public ActionResult Create(Product product)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Products.Add(product);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    productRepository.InsertProduct(product);
+                    productRepository.Save();
+                    return RedirectToAction("Index");
+                }
             }
-
+            catch (DataException)
+            {
+                //Log the error (add a variable name after DataException)
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+            }
             return View(product);
         }
 
         //
-        // GET: /Product/Edit/5
+        // GET: /Student/Edit/5
 
-        public ActionResult Edit(int id = 0)
+        public ActionResult Edit(int id)
         {
-            Product product = db.Products.Find(id);
-            if (product == null)
-            {
-                return HttpNotFound();
-            }
+            Product product = productRepository.GetProductByID(id);
             return View(product);
         }
 
         //
-        // POST: /Product/Edit/5
+        // POST: /Student/Edit/5
 
         [HttpPost]
         public ActionResult Edit(Product product)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Entry(product).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    productRepository.UpdateProduct(product);
+                    productRepository.Save();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (DataException)
+            {
+                //Log the error (add a variable name after DataException)
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
             }
             return View(product);
         }
 
         //
-        // GET: /Product/Delete/5
+        // GET: /Student/Delete/5
 
-        public ActionResult Delete(int id = 0)
+        public ActionResult Delete(int id, bool? saveChangesError)
         {
-            Product product = db.Products.Find(id);
-            if (product == null)
+            if (saveChangesError.GetValueOrDefault())
             {
-                return HttpNotFound();
+                ViewBag.ErrorMessage = "Unable to save changes. Try again, and if the problem persists see your system administrator.";
             }
+            Product product = productRepository.GetProductByID(id);
             return View(product);
         }
 
+
         //
-        // POST: /Product/Delete/5
+        // POST: /Student/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Product product = db.Products.Find(id);
-            db.Products.Remove(product);
-            db.SaveChanges();
+            try
+            {
+                Product product = productRepository.GetProductByID(id);
+                productRepository.DeleteProduct(id);
+                productRepository.Save();
+            }
+            catch (DataException)
+            {
+                //Log the error (add a variable name after DataException)
+                return RedirectToAction("Delete",
+                    new System.Web.Routing.RouteValueDictionary { 
+                { "id", id }, 
+                { "saveChangesError", true } });
+            }
             return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            db.Dispose();
+            productRepository.Dispose();
             base.Dispose(disposing);
         }
+
     }
 }
