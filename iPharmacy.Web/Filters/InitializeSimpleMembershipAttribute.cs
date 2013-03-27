@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using WebMatrix.WebData;
 using iPharmacy.Web.Models;
 
+using iPharmacy.Domain;
+
 namespace iPharmacy.Web.Filters
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
@@ -25,11 +27,11 @@ namespace iPharmacy.Web.Filters
         {
             public SimpleMembershipInitializer()
             {
-                Database.SetInitializer<UsersContext>(null);
+                Database.SetInitializer<iPharmacyDb>(null);
 
                 try
                 {
-                    using (var context = new UsersContext())
+                    using (var context = new iPharmacyDb())
                     {
                         if (!context.Database.Exists())
                         {
@@ -38,7 +40,7 @@ namespace iPharmacy.Web.Filters
                         }
                     }
 
-                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    WebSecurity.InitializeDatabaseConnection("IPharmacyConnection", "UserProfiles", "Id", "UserName", autoCreateTables: true);
                 }
                 catch (Exception ex)
                 {

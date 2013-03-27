@@ -11,6 +11,10 @@ using WebMatrix.WebData;
 using iPharmacy.Web.Filters;
 using iPharmacy.Web.Models;
 
+
+using iPharmacy.Model;
+using iPharmacy.Domain;
+
 namespace iPharmacy.Web.Controllers
 {
     [Authorize]
@@ -79,7 +83,7 @@ namespace iPharmacy.Web.Controllers
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password, new { FirstName=model.FirstName, LastName=model.LastName, Email=model.Email, PhoneNumber=model.PhoneNumber });
                     WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Home");
                 }
@@ -263,7 +267,7 @@ namespace iPharmacy.Web.Controllers
             if (ModelState.IsValid)
             {
                 // Insert a new user into the database
-                using (UsersContext db = new UsersContext())
+                using (iPharmacyDb db = new iPharmacyDb())
                 {
                     UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
                     // Check if user already exists

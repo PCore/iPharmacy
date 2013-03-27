@@ -288,6 +288,16 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iPharmacy.Domain\iPharmacy.Domain.csproj">
+      <Project>{F7ECB52E-2966-4BCC-8E4D-95F4074CD46E}</Project>
+      <Name>iPharmacy.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iPharmacy.Model\iPharmacy.Model.csproj">
+      <Project>{74ABE6DD-2647-4E4C-83F6-2EB641053923}</Project>
+      <Name>iPharmacy.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -304,7 +314,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>2863</DevelopmentServerPort>
+          <DevelopmentServerPort>2123</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
