@@ -44,6 +44,7 @@ mark {
 
 .float-left {
     float: left;
+    /*background-color:#1BBCE0;*/
 }
 
 .float-right {
@@ -96,6 +97,7 @@ h5, h6 {
 .content-wrapper {
     margin: 0 auto;
     max-width: 960px;
+    
 }
 
 #body {
@@ -115,7 +117,7 @@ h5, h6 {
     }
 
 header .content-wrapper {
-    padding-top: 20px; 
+    padding-top: 20px;     
 }
 
 footer {
@@ -147,17 +149,18 @@ footer {
 ----------------------------------------------------------*/
 #login {
     display: block;
-    font-size: .85em;
-    margin: 0 0 10px;
+    font-size: 1.5em;
+    margin: 20 0 0 10px;
     text-align: right;
 }
 
     #login a {
-        background-color: #d3dce0;
+        background-color: #ffffff;
         margin-left: 10px;
         margin-right: 3px;
         padding: 2px 3px;
         text-decoration: none;
+        color:#D4A50B;
     }
 
     #login a.username {
@@ -184,7 +187,7 @@ ul#menu {
     font-weight: 600;
     margin: 0 0 5px;
     padding: 0;
-    text-align: right;
+    text-align: left;
 }
 
     ul#menu li {
@@ -195,12 +198,12 @@ ul#menu {
 
         ul#menu li a {
             background: none;
-            color: #999;
+            color: #BA9709;
             text-decoration: none;
         }
 
         ul#menu li a:hover {
-            color: #333;
+            color: #EB6F1C;
             text-decoration: none;
         }
 
@@ -753,4 +756,16 @@ tr.pager td {
         footer p {
             margin: 0;
         }
+        
+    
 }
+ /*New css
+---------------------------------------------------------------------*/
+.newheader
+{
+    background-color:#38CCF5;
+    height:150px;
+    padding-right:120px;
+    background: url("../Images/Ipharmacy.png") no-repeat;
+    
+    }
