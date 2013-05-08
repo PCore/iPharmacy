@@ -7,9 +7,12 @@ using System.Web;
 using System.Web.Mvc;
 using iPharmacy.Model;
 using iPharmacy.Domain;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace iPharmacy.Web.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
         private IProductRepository productRepository;
@@ -27,8 +30,7 @@ namespace iPharmacy.Web.Controllers
 
 
         //
-        // GET: /Student/
-
+        // GET: /Product/
         public ViewResult Index()
         {
             return View(productRepository.GetProducts());
@@ -36,7 +38,7 @@ namespace iPharmacy.Web.Controllers
 
 
         //
-        // GET: /Student/Details/5
+        // GET: /Product/Details/5
 
         public ViewResult Details(int id)
         {
@@ -45,7 +47,7 @@ namespace iPharmacy.Web.Controllers
         }
 
         //
-        // GET: /Student/Create
+        // GET: /Product/Create
 
         public ActionResult Create()
         {
@@ -53,9 +55,10 @@ namespace iPharmacy.Web.Controllers
         }
 
         //
-        // POST: /Student/Create
+        // POST: /Product/Create
 
         [HttpPost]
+      
         public ActionResult Create(Product product)
         {
             try
@@ -76,7 +79,7 @@ namespace iPharmacy.Web.Controllers
         }
 
         //
-        // GET: /Student/Edit/5
+        // GET: /Product/Edit/5
 
         public ActionResult Edit(int id)
         {
@@ -85,7 +88,7 @@ namespace iPharmacy.Web.Controllers
         }
 
         //
-        // POST: /Student/Edit/5
+        // POST: /Product/Edit/5
 
         [HttpPost]
         public ActionResult Edit(Product product)
@@ -108,7 +111,7 @@ namespace iPharmacy.Web.Controllers
         }
 
         //
-        // GET: /Student/Delete/5
+        // GET: /Product/Delete/5
 
         public ActionResult Delete(int id, bool? saveChangesError)
         {
@@ -122,7 +125,7 @@ namespace iPharmacy.Web.Controllers
 
 
         //
-        // POST: /Student/Delete/5
+        // POST: /Product/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
