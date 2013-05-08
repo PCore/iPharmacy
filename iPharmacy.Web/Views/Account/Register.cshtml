@@ -3,16 +3,14 @@
     ViewBag.Title = "Register";
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>Create a new account.</h2>
-</hgroup>
+    <div class="fieldsetHeader"><font>Create a new account</font></div>
+
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary()
 
-    <fieldset>
+    <fieldset class="loginfieldset">
         <legend>Registration Form</legend>
         <ol>
             <li>
@@ -49,7 +47,7 @@
                 @Html.PasswordFor(m => m.ConfirmPassword)
             </li>
         </ol>
-        <input type="submit" value="Register" />
+        <input type="submit" value="" style="background-image:url('../images/registernow.png');width:92px;height:20px;margin:10px" />
     </fieldset>
 }
 

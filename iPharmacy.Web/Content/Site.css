@@ -1,5 +1,6 @@
 ﻿html {
-    background-color: #e2e2e2;
+    /*background-color: #e2e2e2;*/
+    background-color:#fff;
     margin: 0;
     padding: 0;
 }
@@ -96,12 +97,13 @@ h5, h6 {
 ----------------------------------------------------------*/
 .content-wrapper {
     margin: 0 auto;
-    max-width: 960px;
+    max-width: 962px;
     
 }
 
 #body {
-    background-color: #efeeef;
+    /*background-color: #efeeef;*/
+    background-color:#fff;
     clear: both;
     padding-bottom: 35px;
 }
@@ -113,18 +115,27 @@ h5, h6 {
     }
 
     .featured + .main-content {
-        background: url("../Images/heroAccent.png") no-repeat;
+        /*background: url("../Images/heroAccent.png") no-repeat;*/
     }
 
 header .content-wrapper {
-    padding-top: 20px;     
+    /*padding-top: 20px; */
 }
 
 footer {
     clear: both;
-    background-color: #e2e2e2;
+    background-color: #f2f2f2;
     font-size: .8em;
     height: 100px;
+    width:960px;
+    margin:190px;
+    vertical-align:middle;
+    -moz-border-radius-topright: 20px;
+    border-top-right-radius: 20px;
+    -moz-border-radius-topleft: 20px;
+    border-top-left-radius: 20px;
+    border: 1px solid #358CE8;
+  
 }
 
 
@@ -149,7 +160,7 @@ footer {
 ----------------------------------------------------------*/
 #login {
     display: block;
-    font-size: 1.5em;
+    font-size: 1.2em;
     margin: 20 0 0 10px;
     text-align: right;
 }
@@ -208,6 +219,40 @@ ul#menu {
         }
 
 
+ul#menunew 
+{
+    
+    font-size: 1.0em;
+    font-weight: 100;
+    margin: 0 0 5px;
+    padding: 0;
+    text-align: right;
+    background:#00FF00;
+    height:10;
+    vertical-align:middle;
+    width:960px;
+}
+
+    ul#menunew li {
+        display: inline;
+        list-style: none;
+        padding-left: 15px;
+    }
+
+        ul#menunew li a {
+            background: none;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        ul#menunew li a:hover {
+            color: #333;
+            text-decoration: none;
+        }
+
+
+
+
 /* page elements
 ----------------------------------------------------------*/
 /* featured */
@@ -216,14 +261,26 @@ ul#menu {
 }
 
     .featured .content-wrapper {
-        background-color: #7ac0da;
+        /*background-color: #7ac0da;
         background-image: -ms-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: -o-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #7ac0da), color-stop(1, #a4d4e6));
         background-image: -webkit-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         color: #3e5667;
-        padding: 20px 40px 30px 40px;
+        padding: 20px 40px 30px 40px;*/
+        background-color: #358CE8;
+        margin:20 0 0 0;
+       /*-moz-border-radius: 10px,0,0,10px;
+       -webkit-border-radius: 10px;
+        border-radius: 10px;
+        -moz-border-radius-bottomright: 20px;
+        border-bottom-right-radius: 20px;
+        -moz-border-radius-bottomleft: 20px;
+        border-bottom-left-radius: 20px;
+        border: 1px solid #358CE8;*/
+      
+
     }
 
         .featured hgroup.title h1, .featured hgroup.title h2 {
@@ -237,7 +294,24 @@ ul#menu {
 /* page titles */
 hgroup.title {
     margin-bottom: 10px;
+    height:100px;
+    background-color: #358CE8;
+    -moz-border-radius-bottomright: 20px;
+    border-bottom-right-radius: 20px;
+    -moz-border-radius-bottomleft: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px solid #358CE8;
+  
 }
+
+hgroup.titlenew {
+    margin-bottom: 70px;
+    height:50px;
+    background-color: #fff;
+   
+  
+}
+
 
 hgroup.title h1, hgroup.title h2 {
     display: inline;
@@ -310,6 +384,7 @@ ol.round {
 article {
     float: left;
     width: 70%;
+   
 }
 
 aside {
@@ -352,10 +427,12 @@ aside {
         display: inline;
         list-style: none;
         margin: 0;
+        width:100px;
     }
 
     #loginForm input {
-        width: 250px;
+        width: 180px;
+        height:15px;
     }
 
     #loginForm input[type="checkbox"],
@@ -395,6 +472,7 @@ aside {
 .contact iframe {
     border: 1px solid #333;
     margin: 5px 0 0 10px;
+    
 }
 
 /* forms */
@@ -418,13 +496,19 @@ fieldset {
         }
 
 label {
-    display: block;
-    font-size: 1.2em;
-    font-weight: 600;
+    display: inline-block;
+    font-size: 1.0em;
+    font-weight: 200;
+    font-family:Arial;
+    text-align: left;
+    margin-right: 4px,0,0,4px; 
+    width: 120px;
+    
 }
 
 label.checkbox {
-    display: inline;
+    display: inline-block;
+    
 }
 
 input, textarea {
@@ -434,12 +518,15 @@ input, textarea {
     font-size: 1.2em;
     margin: 5px 0 6px 0;
     padding: 5px;
-    width: 300px;
+    width: 250px;
+    height:18px;
+    
 }
 
 textarea {
     font-family: inherit;
     width: 500px;
+  
 }
 
     input:focus, textarea:focus {
@@ -455,14 +542,14 @@ textarea {
     input[type="submit"],
     input[type="button"],
     button {
-        background-color: #d3dce0;
-        border: 1px solid #787878;
+        
         cursor: pointer;
         font-size: 1.2em;
         font-weight: 600;
         padding: 7px;
         margin-right: 8px;
         width: auto;
+       
     }
 
     td input[type="submit"],
@@ -503,6 +590,8 @@ textarea {
 .field-validation-error {
     color: #e80c4d;
     font-weight: bold;
+    font-family:Arial;
+    font-size:0.9em;
 }
 
 .field-validation-valid {
@@ -769,3 +858,52 @@ tr.pager td {
     background: url("../Images/Ipharmacy.png") no-repeat;
     
     }
+
+
+.titlestyle
+{
+    font-family:Times New Roman;
+    font-style:oblique;
+    font-size:25px;
+    color:Black;
+    font-weight:bold;
+    text-shadow: black 0.3em 0.3em 0.3em;
+    
+    
+}
+
+.loginfieldset
+{
+   
+     -moz-border-radius-topright: 20px;
+    border-top-right-radius: 20px;
+    -moz-border-radius-topleft: 20px;
+    border-bottom-left-radius: 20px;
+  
+    -moz-border-radius-bottomleft: 20px;
+    border-bottom-left-radius: 20px;
+    border: 2px solid #358CE8;
+    background-color:#f2f2f2;
+    width:520px;
+}
+
+.fieldsetHeader
+{
+   
+     -moz-border-radius-topright: 25px;
+    border-top-right-radius:25px;
+    height:25px;
+    background-color:#358CE8;
+    color:#fff;
+    width:160px;
+}
+.loginfieldsetHeader
+{
+   
+    -moz-border-radius-topright: 25px;
+    border-top-right-radius:25px;
+    height:25px;
+    background-color:#358CE8;
+    color:#fff;
+    width:70px;
+}

@@ -231,6 +231,9 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\Ipharmacy.png" />
+    <Content Include="Images\loginimg.png" />
+    <Content Include="Images\pfizerlogo.png" />
+    <Content Include="Images\registernow.png" />
     <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -319,6 +322,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_IPharmacy.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_IPharmacyLayout.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
