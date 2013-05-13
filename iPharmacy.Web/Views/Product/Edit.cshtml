@@ -1,66 +1,58 @@
 ﻿@model iPharmacy.Model.Product
 
-@{
-    ViewBag.Title = "Edit";
-}
-
-<h2>Edit</h2>
-
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
-
-    <fieldset>
+    <div style="float:right">
+    @Html.ActionLink("Back to List", "Index")
+</div> 
+    <div class="loginfieldsetHeader"> <font>Edit Product</font></div>
+    <fieldset class="loginfieldset" style="width:630px">
         <legend>Product</legend>
 
         @Html.HiddenFor(model => model.Id)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Name)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Name)
-            @Html.ValidationMessageFor(model => model.Name)
-        </div>
+       <ol>
+            <li>
+                @Html.LabelFor(model => model.Name)
+       
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </li>
+      
+            <li>
+                @Html.LabelFor(model => model.Description)        
+           
+                @Html.EditorFor(model => model.Description)
+                @Html.ValidationMessageFor(model => model.Description)
+           </li>       
+            <li>
+                @Html.LabelFor(model => model.Price)    
+              
+                @Html.EditorFor(model => model.Price)
+                @Html.ValidationMessageFor(model => model.Price)
+           </li>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Description)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Description)
-            @Html.ValidationMessageFor(model => model.Description)
-        </div>
+           <li>
+                @Html.LabelFor(model => model.AvailableQuantity)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Price)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Price)
-            @Html.ValidationMessageFor(model => model.Price)
-        </div>
+                @Html.EditorFor(model => model.AvailableQuantity)
+                @Html.ValidationMessageFor(model => model.AvailableQuantity)
+           </li>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.AvailableQuantity)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.AvailableQuantity)
-            @Html.ValidationMessageFor(model => model.AvailableQuantity)
-        </div>
+           <li>
+                @Html.LabelFor(model => model.OTC)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.OTC)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.OTC)
-            @Html.ValidationMessageFor(model => model.OTC)
-        </div>
+                @Html.EditorFor(model => model.OTC)
+                @Html.ValidationMessageFor(model => model.OTC)
+          </li>
 
-        <div class="editor-label">
+          <li>
             @Html.LabelFor(model => model.Regulated)
-        </div>
-        <div class="editor-field">
+
             @Html.EditorFor(model => model.Regulated)
             @Html.ValidationMessageFor(model => model.Regulated)
-        </div>
+        </li>
+     </ol>
 
         <p>
             <input type="submit" value="Save" />
@@ -68,9 +60,7 @@
     </fieldset>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

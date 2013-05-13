@@ -16,20 +16,23 @@ body {
 }
 
 a {
-    color: #333;
+    
     outline: none;
     padding-left: 3px;
     padding-right: 3px;
     text-decoration: underline;
+    
+    
+    
 }
 
     a:link, a:visited,
     a:active, a:hover {
-        color: #333;
+        color: #47712A;
     }
 
     a:hover {
-        background-color: #c7d1d6;
+        color: #358CE8;
     }
 
 header, footer, hgroup,
@@ -549,6 +552,7 @@ textarea {
         padding: 7px;
         margin-right: 8px;
         width: auto;
+        height:35px;
        
     }
 
@@ -622,17 +626,17 @@ input[type="checkbox"].input-validation-error {
 table {
     border-collapse: collapse;
     border-spacing: 0;
-    margin-top: 0.75em;
     border: 0 none;
     
 }
 
 th {
-    font-size: 1.2em;
+    font-size: 1.1em;
     text-align: left;
     border: none 0px;
     padding-left: 0;
     color:Black;
+    font-family:Calibri;
 }
 
     th a {
@@ -642,7 +646,7 @@ th {
 
     th a:link, th a:visited, th a:active, th a:hover {
         color: #333;
-        font-weight: 600;
+        font-weight: 300;
         text-decoration: none;
         padding: 0;
         
@@ -673,10 +677,12 @@ th {
     }
 
 td {
-    padding: 0.25em 2em 0.25em 0em;
+    padding: 0.5em 2em 0.25em 0em;
     border: 0 none;
     color:Black;
-    width:100px;
+    width:110px;
+    font-family:Calibri;
+    font-size: 1.0em;
 }
 
 tr.pager td {
@@ -895,7 +901,7 @@ tr.pager td {
 .fieldsetHeader
 {
    
-     -moz-border-radius-topright: 25px;
+    -moz-border-radius-topright: 25px;
     border-top-right-radius:25px;
     height:25px;
     background-color:#358CE8;
@@ -910,22 +916,25 @@ tr.pager td {
     height:25px;
     background-color:#358CE8;
     color:#fff;
-    width:70px;
+    width:90px;
 }
 
 .productsTable
 {
    
-    -moz-border-radius-topright: 20px;
-    border-top-right-radius: 20px;
-    -moz-border-radius-topleft: 20px;
-    border-bottom-left-radius: 20px;
-  
-    -moz-border-radius-bottomleft: 20px;
-    border-bottom-left-radius: 20px;
-   
-    background-color:#f2f2f2;
-    color:#fff;
-    width:900px;
+    -moz-border-radius-topright: 10px;
+    border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    border-top-left-radius: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    border-bottom-right-radius: 10px;
+    background-color:#C5E8E4;
+    color:#fff; 
+    width:980px;
+    box-shadow: 10px 10px 5px #888888;
     
 }
+
+

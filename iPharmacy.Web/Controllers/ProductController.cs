@@ -12,11 +12,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace iPharmacy.Web.Controllers
 {
+   
     [Authorize]
     public class ProductController : Controller
     {
         private IProductRepository productRepository;
-
 
         public ProductController()
         {

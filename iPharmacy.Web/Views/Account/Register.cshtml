@@ -1,15 +1,15 @@
-﻿@model iPharmacy.Web.Models.RegisterModel
+﻿@model iPharmacy.Model.RegisterModel
 @{
     ViewBag.Title = "Register";
 }
 
-    <div class="fieldsetHeader"><font>Create a new account</font></div>
+    
 
 
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary()
-
+    <div class="fieldsetHeader"><font>Create a new account</font></div>
     <fieldset class="loginfieldset">
         <legend>Registration Form</legend>
         <ol>

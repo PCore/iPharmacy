@@ -9,9 +9,6 @@ using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 using iPharmacy.Web.Filters;
-using iPharmacy.Web.Models;
-
-
 using iPharmacy.Model;
 using iPharmacy.Domain;
 
@@ -21,7 +18,8 @@ namespace iPharmacy.Web.Controllers
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
-        //
+
+      
         // GET: /Account/Login
 
         [AllowAnonymous]

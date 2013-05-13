@@ -1,15 +1,18 @@
 ﻿@model iPharmacy.Model.Product
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Add";
 }
+<div style="float:right">
+    @Html.ActionLink("Back to Products", "Index")
+</div>
 
-<h2>Create</h2>
+ <div class="fieldsetHeader"><font>Add New Product</font></div>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
 
-    <fieldset>
+    <fieldset class="loginfieldset">
         <legend>Product</legend>
 
         <div class="editor-label">
@@ -61,14 +64,12 @@
         </div>
 
         <p>
-            <input type="submit" value="Create" />
+            <input type="submit" value="Add" />
         </p>
     </fieldset>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
